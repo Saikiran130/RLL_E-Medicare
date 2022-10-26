@@ -1,0 +1,35 @@
+<div id="sect1"class="container">
+  <header class="main-header-1">
+      <div>
+          <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="logo">E-Medicare</a>
+          </div>
+          <nav class="navigation">
+              <a routerLink="/adminpage" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Back</a>
+              <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Log-out</a>
+          </nav>
+  </header>
+
+
+ 
+ <form class="update_Med" #s="ngForm" (ngSubmit)="onSubmit(s)"> 
+  <div class="container1">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2>Update Medicine</h2>
+        <input type="hidden" name="medicineId" [(ngModel)] = "Medicine.medicineId" readonly/>
+				<input type="text" class="field" placeholder="Medicine Name"  name="medicineName" [(ngModel)] = "Medicine.medicineName" #medicineName="ngModel">
+				<input type="date" class="field" name="manufacturedDate" [(ngModel)] = "Medicine.manufactureDate" placeholder="ManufactureDate" #manufactureDate="ngModel"/>
+				<input type="text" class="field"  placeholder="Medicine Type" name="type" [(ngModel)] = "Medicine.type" #type="ngModel">
+        <input type="text" class="field"  placeholder="Medicine Price" name="price" [(ngModel)] = "Medicine.price" #price="ngModel">
+        <input type="text" class="field"  placeholder="Medicine Description"  name="description" [(ngModel)] = "Medicine.description" #description="ngModel">
+        <input type="date" class="field"  placeholder="Medicine Expiry Date" name="expdate" [(ngModel)] = "Medicine.expdate" #expireDate="ngModel">
+        <input type="text" class="field"  placeholder="Medicine Available Status"  name="status"  [(ngModel)] = "Medicine.status" #status="ngModel">
+        <input type="text" class="field"  placeholder="Medicine Seller Name" name="seller" [(ngModel)] = "Medicine.seller"  #seller="ngModel">
+				<button class="btn">Update</button>
+			</div>
+		</div>
+	</div>
+   </form> 
+
+   <router-outlet></router-outlet>
